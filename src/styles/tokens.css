@@ -1,0 +1,152 @@
+/* ==========================================================================
+   Design tokens — CSP Challenge Lab
+   Typography · spacing · radius · shadow · colour · status colours
+   ========================================================================== */
+
+:root {
+  /* Typography */
+  --font-sans: 'Inter', 'SF Pro Text', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Inter Tight', 'Inter', 'SF Pro Display', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.8125rem;
+  --fs-md: 0.9375rem;
+  --fs-lg: 1.0625rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.625rem;
+  --fs-3xl: 2.25rem;
+  --fs-hero: clamp(2.5rem, 6vw, 4.5rem);
+
+  /* Spacing scale (4px grid) */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+
+  /* Radius */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+  --r-pill: 999px;
+
+  /* Layout */
+  --sidebar-w: 248px;
+  --content-max: 1320px;
+  --tabbar-h: 62px;
+  --topbar-h: 56px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --t-fast: 120ms;
+  --t-med: 220ms;
+  --t-slow: 420ms;
+
+  /* Game colours (map palette stays identical in both themes — they are game pieces) */
+  --map-red: #ef4444;
+  --map-green: #22c55e;
+  --map-blue: #3b82f6;
+  --map-yellow: #eab308;
+}
+
+/* ---------- Dark (default) ---------- */
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #080c18;
+  --bg-grad-1: rgba(99, 102, 241, 0.16);
+  --bg-grad-2: rgba(34, 211, 238, 0.09);
+  --surface-0: #0d1224;
+  --surface-1: #11172c;
+  --surface-2: #171e38;
+  --surface-3: #1f2847;
+  --glass: rgba(20, 27, 52, 0.62);
+  --border: rgba(148, 163, 205, 0.16);
+  --border-strong: rgba(148, 163, 205, 0.3);
+
+  --text: #e8ebf7;
+  --text-2: #aab3d1;
+  --text-3: #7d88ad;
+  --text-on-accent: #0a0e1c;
+
+  --accent: #8b9bff;
+  --accent-2: #36d3f0;
+  --accent-soft: rgba(139, 155, 255, 0.14);
+  --accent-ring: rgba(139, 155, 255, 0.55);
+  --grad-accent: linear-gradient(135deg, #8b9bff 0%, #36d3f0 100%);
+  --grad-text: linear-gradient(120deg, #c4ccff 0%, #8b9bff 35%, #36d3f0 100%);
+
+  --good: #3dd9a0;
+  --good-soft: rgba(61, 217, 160, 0.14);
+  --bad: #ff6b81;
+  --bad-soft: rgba(255, 107, 129, 0.15);
+  --warn: #ffc857;
+  --warn-soft: rgba(255, 200, 87, 0.15);
+  --info: #6cb6ff;
+  --info-soft: rgba(108, 182, 255, 0.14);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35), 0 1px 0 rgba(255, 255, 255, 0.03) inset;
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  --shadow-glow: 0 0 0 1px rgba(139, 155, 255, 0.35), 0 10px 40px rgba(99, 102, 241, 0.25);
+
+  --board-light: #1b2342;
+  --board-dark: #141a33;
+  --map-stroke: rgba(8, 12, 24, 0.9);
+  --map-empty: #2c3766;
+  --map-empty-hover: #3a4784;
+}
+
+/* ---------- Light ---------- */
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f3f5fb;
+  --bg-grad-1: rgba(99, 102, 241, 0.1);
+  --bg-grad-2: rgba(14, 165, 233, 0.08);
+  --surface-0: #ffffff;
+  --surface-1: #ffffff;
+  --surface-2: #f2f4fb;
+  --surface-3: #e7eaf6;
+  --glass: rgba(255, 255, 255, 0.78);
+  --border: rgba(30, 41, 90, 0.12);
+  --border-strong: rgba(30, 41, 90, 0.26);
+
+  --text: #11183a;
+  --text-2: #465076;
+  --text-3: #6a7499;
+  --text-on-accent: #ffffff;
+
+  --accent: #4452d9;
+  --accent-2: #0a8fb3;
+  --accent-soft: rgba(68, 82, 217, 0.1);
+  --accent-ring: rgba(68, 82, 217, 0.5);
+  --grad-accent: linear-gradient(135deg, #4452d9 0%, #0a8fb3 100%);
+  --grad-text: linear-gradient(120deg, #2a2f8f 0%, #4452d9 45%, #0a8fb3 100%);
+
+  --good: #0e8f63;
+  --good-soft: rgba(14, 143, 99, 0.12);
+  --bad: #d62f4b;
+  --bad-soft: rgba(214, 47, 75, 0.1);
+  --warn: #a96a00;
+  --warn-soft: rgba(217, 140, 0, 0.14);
+  --info: #1f6fc9;
+  --info-soft: rgba(31, 111, 201, 0.1);
+
+  --shadow-sm: 0 1px 2px rgba(20, 30, 80, 0.08);
+  --shadow-md: 0 8px 24px rgba(20, 30, 80, 0.09);
+  --shadow-lg: 0 24px 60px rgba(20, 30, 80, 0.16);
+  --shadow-glow: 0 0 0 1px rgba(68, 82, 217, 0.3), 0 10px 40px rgba(68, 82, 217, 0.18);
+
+  --board-light: #e9ecf8;
+  --board-dark: #cfd5ee;
+  --map-stroke: #ffffff;
+  --map-empty: #dfe4f5;
+  --map-empty-hover: #cdd5ee;
+}
